@@ -9,7 +9,7 @@
 #import "BMPayManager.h"
 #import "BMWechatPayInfoModel.h"
 #import <YYModel/YYModel.h>
-#import <SVProgressHUD.h>
+#import "SVProgressHUD.h"
 
 #import "BMDefine.h"
 

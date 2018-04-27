@@ -9,7 +9,7 @@
 #import "BMPayModule.h"
 #import "BMPayManager.h"
 #import <WechatOpenSDK/WXApi.h>
-#import <WeexPluginLoader/WeexPluginLoader.h>
+#import <WeexPluginLoader/WeexPluginLoader/WeexPluginLoader.h>
 
 WX_PlUGIN_EXPORT_MODULE(bmWXPay, BMPayModule)
 
