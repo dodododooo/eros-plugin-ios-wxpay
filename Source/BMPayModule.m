@@ -13,6 +13,10 @@
 
 WX_PlUGIN_EXPORT_MODULE(bmWXPay, BMPayModule)
 
+@interface BMPayModule ()
+@property (nonatomic, assign) BOOL WXAppIsInstall;
+@end
+
 @implementation BMPayModule
 
 @synthesize weexInstance;
@@ -24,7 +28,10 @@ WX_EXPORT_METHOD(@selector(pay:callback:))
 /** 判断是否安装了微信 */
 -(BOOL)isInstallWXApp
 {
-    return [WXApi isWXAppInstalled];
+    dispatch_sync(dispatch_get_main_queue(), ^{
+        self.WXAppIsInstall = [WXApi isWXAppInstalled];
+    });
+    return self.WXAppIsInstall;
 }
 
 - (void)initWX:(NSString *)appkey
