@@ -22,7 +22,7 @@ WX_PlUGIN_EXPORT_MODULE(bmWXPay, BMPayModule)
 @synthesize weexInstance;
 
 WX_EXPORT_METHOD_SYNC(@selector(isInstallWXApp))
-WX_EXPORT_METHOD(@selector(initWX:))
+WX_EXPORT_METHOD_SYNC(@selector(initWX:))
 WX_EXPORT_METHOD(@selector(pay:callback:))
 
 /** 判断是否安装了微信 */
