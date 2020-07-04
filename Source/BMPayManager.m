@@ -70,12 +70,14 @@
     payRequest.timeStamp = [payInfo.timestamp intValue];
     payRequest.sign = payInfo.sign;
     
-    if ([WXApi sendReq:payRequest]) {
-        [SVProgressHUD dismiss];
-        WXLogInfo(@"调用微信成功");
-    } else {
-        WXLogError(@"调用微信失败");
-    }
+     [WXApi sendReq:payRequest completion:^(BOOL success) {
+           if (success) {
+               [SVProgressHUD dismiss];
+               WXLogInfo(@"调用微信成功");
+           } else {
+                WXLogError(@"调用微信失败");
+           }
+       }];
 }
 
 // 微信支付结果回调
@@ -109,12 +111,12 @@
 //
 //  处理支付结果
 //
-- (BOOL)applicationOpenURL:(NSURL *)url
+- (BOOL)applicationOpenURL:(NSUserActivity *)userActivity
 {
     // 微信支付结果
-    if ([url.host isEqualToString:@"pay"]) {
-        return [WXApi handleOpenURL:url delegate:self];
-    }
+    //if ([url.host isEqualToString:@"pay"]) {
+        return [WXApi handleOpenUniversalLink:userActivity delegate:self];
+    //}
     
 //    // 支付宝支付结果
 //    if ([url.host isEqualToString:@"safepay"]) {
