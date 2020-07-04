@@ -36,7 +36,7 @@ WX_EXPORT_METHOD(@selector(pay:callback:))
 
 - (void)initWX:(NSString *)appkey universalLink:(NSString *)universalLink
 {
-    [WXApi registerApp:appkey universalLink:universaLink];
+    [WXApi registerApp:appkey universalLink:universalLink];
 
 }
 
