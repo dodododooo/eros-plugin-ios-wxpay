@@ -1,7 +1,7 @@
 # coding: utf-8
 Pod::Spec.new do |s|
   s.name         = "ErosPluginWXPay"
-  s.version      = "1.1.0"
+  s.version      = "1.1.1"
   s.summary      = "ErosPluginWXPay Source ."
   s.homepage     = 'https://github.com/LiHuiZai/eros-plugin-ios-wxpay'
   s.license      = "MIT"

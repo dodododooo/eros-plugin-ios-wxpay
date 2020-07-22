@@ -107,15 +107,23 @@
 //        }
     }
 }
-
+- (BOOL)applicationOpenURL:(id)url{
+    if([url isKindOfClass:[NSURL class]]){
+        return [WXApi handleOpenURL:url delegate:self];
+    }else if([url isKindOfClass:[NSUserActivity class]]){
+        return [WXApi handleOpenUniversalLink:url delegate:self];
+    }else{
+        return NO;
+    }
+}
 //
 //  处理支付结果
 //
-- (BOOL)applicationOpenURL:(NSUserActivity *)userActivity
-{
+//- (BOOL)applicationOpenURL:(NSUserActivity *)userActivity
+//{
     // 微信支付结果
     //if ([url.host isEqualToString:@"pay"]) {
-        return [WXApi handleOpenUniversalLink:userActivity delegate:self];
+//        return [WXApi handleOpenUniversalLink:userActivity delegate:self];
     //}
     
 //    // 支付宝支付结果
@@ -155,8 +163,8 @@
 //        }];
 //    }
     
-    return YES;
-}
+//    return YES;
+//}
 
 #pragma mark - Custom Delegate & DataSource
 

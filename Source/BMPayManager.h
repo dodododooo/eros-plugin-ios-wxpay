@@ -21,6 +21,7 @@
 - (void)payByWechat:(NSDictionary *)payInfo callback:(WXModuleCallback)callback;
 
 /** 从其他app掉起次app时调用 */
-- (BOOL)applicationOpenURL:(NSUserActivity *)userActivity;
+//- (BOOL)applicationOpenURL:(NSUserActivity *)userActivity;
+- (BOOL)applicationOpenURL:(id)url;
 
 @end
