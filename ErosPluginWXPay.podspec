@@ -1,7 +1,7 @@
 # coding: utf-8
 Pod::Spec.new do |s|
   s.name         = "ErosPluginWXPay"
-  s.version      = "1.1.6"
+  s.version      = "1.1.7"
   s.summary      = "ErosPluginWXPay Source ."
   s.homepage     = 'https://github.com/dodododooo/eros-plugin-ios-wxpay'
   s.license      = "MIT"
@@ -11,5 +11,6 @@ Pod::Spec.new do |s|
   s.source = { :git => 'https://github.com/dodododooo/eros-plugin-ios-wxpay.git', :tag => s.version.to_s }
   s.source_files = "Source/*.{h,m,mm}"
   s.requires_arc = true
-
+  s.dependency 'WechatOpenSDK', '1.9.2'
+  
 end
